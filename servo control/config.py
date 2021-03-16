@@ -13,18 +13,18 @@ H_BAL_M = [16, 12]
 # servo_name_S = [order_on_maestro, Left_max, Right_max]
 
 PWM_MG90S = {
-    "min":400,
-    "max":2432,
+    "min":400*4,
+    "max":2432*4,
     "total":180
 }
 PWM_MM0090 = {
-    "min":480,
-    "max":2368,
+    "min":480*4,
+    "max":2368*4,
     "total":180
 }
 PWM_SG90 = {
-    "min":554,
-    "max":2352,
+    "min":554*4,
+    "max":2352*4,
     "total":180
 }
 

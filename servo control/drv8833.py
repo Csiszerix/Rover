@@ -58,6 +58,10 @@ class Motor:
     def stop(self):
         self.setSpeed(0)
 
+    def brake(self):
+        wiringpi.softPwmWrite(self.IN2, MAX_SPEED)
+        wiringpi.softPwmWrite(self.IN1, MAX_SPEED)
+
 
 
 class DRV8833:
@@ -73,6 +77,8 @@ class DRV8833:
         if B:
             self.motorB.stop()
 
-    def setSpeeds(self, speedA, speedB):
-        self.motorA.setSpeed(speedA)
-        self.motorB.setSpeed(speedB)
+    def setSpeeds(self, speedA=None, speedB=None):
+        if speedA is not None:
+            self.motorA.setSpeed(speedA)
+        if speedB is not None:
+            self.motorB.setSpeed(speedB)
